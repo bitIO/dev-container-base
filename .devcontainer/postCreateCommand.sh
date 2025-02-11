@@ -23,6 +23,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 # Override default files
-cp /workspaces/dev-containers/.devcontainer/oh-my-zsh/.zshrc ~/.zshrc
-cp /workspaces/dev-containers/.devcontainer/oh-my-zsh/.fzf.zsh ~/.fzf.zsh
-cp /workspaces/dev-containers/.devcontainer/oh-my-zsh/.p10k.zsh ~/.p10k.zsh
+cp /workspaces/dev-containers/.devcontainer/local/.zshrc ~/.zshrc
+cp /workspaces/dev-containers/.devcontainer/local/.fzf.zsh ~/.fzf.zsh
+cp /workspaces/dev-containers/.devcontainer/local/.p10k.zsh ~/.p10k.zsh
