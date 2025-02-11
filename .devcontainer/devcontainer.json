@@ -1,37 +1,77 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "Ubuntu",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	// "image": "mcr.microsoft.com/devcontainers/base:jammy",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sh .devcontainer/postCreateCommand.sh",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "vscode",
-
-	// Uncomment the next line to configure whether the container is shut down after closing VS Code.
-	"shutdownAction": "stopContainer",
-	
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"ms-azuretools.vscode-docker",
-				"streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries"
-			]
-		}
-	}
+  "name": "Ubuntu",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  // "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "sh .devcontainer/postCreateCommand.sh",
+  // Configure tool-specific properties.
+  // "customizations": {},
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "vscode",
+  // Uncomment the next line to configure whether the container is shut down after closing VS Code.
+  "shutdownAction": "stopContainer",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries"
+      ],
+      "settings": {
+        "editor.fontFamily": "'FiraCode NF', 'FiraCode Nerd Font',  Menlo, Monaco, 'Courier New', monospace",
+        "editor.fontLigatures": true,
+        "editor.fontSize": 12,
+        "editor.fontWeight": "400",
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
+        "editor.guides.bracketPairs": true,
+        "editor.guides.highlightActiveIndentation": true,
+        "editor.guides.indentation": true,
+        "editor.inlineSuggest.enabled": true,
+        "editor.letterSpacing": 0.5,
+        "editor.minimap.enabled": false,
+        "editor.multiCursorModifier": "ctrlCmd",
+        "editor.quickSuggestionsDelay": 30,
+        "editor.rulers": [
+          {
+            "color": "#fff23866",
+            "column": 80
+          },
+          {
+            "color": "#ffc03866",
+            "column": 100
+          },
+          {
+            "color": "#d6040466",
+            "column": 120
+          }
+        ],
+        "editor.snippetSuggestions": "inline",
+        "editor.stickyScroll.enabled": true,
+        "editor.suggest.preview": true,
+        "editor.suggestSelection": "first",
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+        "terminal.integrated.copyOnSelection": true,
+        "terminal.integrated.fontFamily": "MesloLGS NF",
+        "terminal.integrated.fontSize": 12,
+        "terminal.integrated.scrollback": 2000,
+        "vsicons.dontShowNewVersionMessage": true,
+        "window.confirmBeforeClose": "keyboardOnly",
+        "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}"
+      }
+    }
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ]
 }
