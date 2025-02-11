@@ -8,17 +8,16 @@
     "dockerfile": "Dockerfile"
   },
   // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
+  "features": {},
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
+  "forwardPorts": [],
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "sh .devcontainer/postCreateCommand.sh",
-  // Configure tool-specific properties.
-  // "customizations": {},
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "vscode",
+  "remoteUser": "vscode",
   // Uncomment the next line to configure whether the container is shut down after closing VS Code.
   "shutdownAction": "stopContainer",
+  // Configure tool-specific properties.
   "customizations": {
     "vscode": {
       "extensions": [
@@ -61,6 +60,8 @@
         "editor.suggestSelection": "first",
         "editor.tabSize": 2,
         "editor.wordWrap": "on",
+        "terminal.integrated.defaultProfile.osx": "zsh",
+        "terminal.integrated.defaultProfile.linux": "zsh",
         "terminal.integrated.copyOnSelection": true,
         "terminal.integrated.fontFamily": "MesloLGS NF",
         "terminal.integrated.fontSize": 12,
