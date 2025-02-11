@@ -31,4 +31,7 @@ jobs:
                 imageName: ghcr.io/bitio/dev-container-base
                 cacheFrom: ghcr.io/bitio/dev-container-base
                 push: always
-
+                
+        permissions: 
+            contents: read
+            packages: write
