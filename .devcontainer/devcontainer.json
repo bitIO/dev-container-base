@@ -22,7 +22,8 @@
     "vscode": {
       "extensions": [
         "ms-azuretools.vscode-docker",
-        "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries"
+        "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries",
+        "oderwat.indent-rainbow"
       ],
       "settings": {
         "editor.fontFamily": "'FiraCode NF', 'FiraCode Nerd Font',  Menlo, Monaco, 'Courier New', monospace",
