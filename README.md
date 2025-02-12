@@ -19,7 +19,6 @@ It also comes with (and just to make it look pretty):
 - fzf
   - fzf-tab
 - zoxide
-- bat ( a cat replacement )
 
 ## Shared SSH keys
 
