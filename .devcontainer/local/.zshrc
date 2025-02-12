@@ -54,9 +54,6 @@ zstyle ':omz:update' frequency 13
 # https://unix.stackexchange.com/questions/499317/prevent-completion-of-files-for-make-command-in-zsh-shell
 zstyle ':completion:*:*:make:*' tag-order 'targets'
 
-# Aliases
-alias cat='batcat'
-
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
