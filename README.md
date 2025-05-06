@@ -19,76 +19,19 @@ It also comes with (and just to make it look pretty):
 - fzf
   - fzf-tab
 - zoxide
-- bat ( a cat replacement )
 
-## Shared SSH keys
+## Shared with the host
 
-Container shares the local SSH directory by mounting it this way:
+Container shares:
+
+- the local SSH directory
+- the local AWS credentials
+- the local Wakatime configuration
+
 ```json
   "mounts": [
-    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+    "source=${localEnv:HOME}/.aws,target=/home/node/.aws,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.wakatime.cfg,target=/home/node/.wakatime.cfg,type=bind,consistency=delegated"
   ]
-```
-
-This prevents the possible errors when acessing git repositories
-
-## Shared VSCode configuration
-
-Included extensions:
-
-- ms-azuretools.vscode-docker
-- streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries
-- oderwat.indent-rainbow
-- shardulm94.trailing-spaces
-- wmaurer.change-case
-
-Included configuration:
-
-```json
-{
-  "editor.fontFamily": "'FiraCode NF', 'FiraCode Nerd Font',  Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 12,
-  "editor.fontWeight": "400",
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "file",
-  "editor.guides.bracketPairs": true,
-  "editor.guides.highlightActiveIndentation": true,
-  "editor.guides.indentation": true,
-  "editor.inlineSuggest.enabled": true,
-  "editor.letterSpacing": 0.5,
-  "editor.minimap.enabled": false,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.quickSuggestionsDelay": 30,
-  "editor.rulers": [
-    {
-      "color": "#fff23866",
-      "column": 80
-    },
-    {
-      "color": "#ffc03866",
-      "column": 100
-    },
-    {
-      "color": "#d6040466",
-      "column": 120
-    }
-  ],
-  "editor.snippetSuggestions": "inline",
-  "editor.stickyScroll.enabled": true,
-  "editor.suggest.preview": true,
-  "editor.suggestSelection": "first",
-  "editor.tabSize": 2,
-  "editor.wordWrap": "on",
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.fontFamily": "MesloLGS NF",
-  "terminal.integrated.fontSize": 12,
-  "terminal.integrated.scrollback": 2000,
-  "vsicons.dontShowNewVersionMessage": true,
-  "window.confirmBeforeClose": "keyboardOnly",
-  "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}"
-}
 ```

@@ -52,8 +52,9 @@
     "turborepo",
     "uuidv",
     "viewports",
+    "wakatime",
     "words",
     "zinit",
-    "zoxide",
+    "zoxide"
   ]
 }
