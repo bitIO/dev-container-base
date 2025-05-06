@@ -1,36 +1,92 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-  "name": "Ubuntu",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  // "image": "mcr.microsoft.com/devcontainers/base:jammy",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  "features": {},
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [],
-  // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "",
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  "remoteUser": "vscode",
-  // Uncomment the next line to configure whether the container is shut down after closing VS Code.
-  "shutdownAction": "stopContainer",
-  // Configure tool-specific properties.
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-azuretools.vscode-docker",
-        "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries",
-        "oderwat.indent-rainbow",
+        "Atishay-Jain.All-Autocomplete",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "wmaurer.change-case",
+        "michelemelluso.code-beautifier",
+        "streetsidesoftware.code-spell-checker-spanish",
+        "joshbolduc.commitlint",
+        "mikestead.dotenv",
+        "gurayyarar.dummytextgenerator",
+        "usernamehw.errorlens",
+        "dsznajder.es7-react-js-snippets",
+        "letrieu.expand-region",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "Zignd.html-css-class-completion",
+        "n3rds-inc.image",
+        "Asuka.insertnumbers",
+        "blakeh.jump-to-test",
+        "Tyriar.lorem-ipsum",
+        "yzhang.markdown-all-in-one",
+        "christian-kohler.npm-intellisense",
+        "christian-kohler.path-intellisense",
+        "ms-playwright.playwright",
+        "esbenp.prettier-vscode",
+        "mohsen1.prettify-json",
+        "YoavBls.pretty-ts-errors",
+        "quicktype.quicktype",
+        "marclipovsky.string-manipulation",
+        "jock.svg",
+        "Gruntfuggly.todo-tree",
         "shardulm94.trailing-spaces",
-        "wmaurer.change-case"
+        "kisstkondoros.vscode-codemetrics",
+        "kamikillerto.vscode-colorize",
+        "dbaeumer.vscode-eslint",
+        "janisdd.vscode-edit-csv",
+        "tomoki1207.vscode-input-sequence",
+        "Orta.vscode-jest",
+        "andyyaldoo.vscode-json",
+        "DavidAnson.vscode-markdownlint",
+        "folke.vscode-monorepo-workspace",
+        "richie5um2.vscode-sort-json",
+        "eliostruyf.vscode-typescript-exportallmodules",
+        "wayou.vscode-todo-highlight",
+        "redhat.vscode-yaml",
+        "WakaTime.vscode-wakatime",
+        "onlyutkarsh.git-config-user-profiles",
+        "chrmarti.regex",
+        "pnp.polacode",
+        "aaron-bond.better-comments",
+        "ChakrounAnas.turbo-console-log",
+        "oderwat.indent-rainbow"
       ],
       "settings": {
-        "editor.fontFamily": "'FiraCode NF', 'FiraCode Nerd Font',  Menlo, Monaco, 'Courier New', monospace",
+        "[git-commit]": {
+          "editor.rulers": [
+            72
+          ]
+        },
+        "breadcrumbs.enabled": true,
+        // "debug.javascript.autoAttachFilter": "onlyWithFlag",
+        "colorize.languages": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "json",
+          "jsonc",
+          "yaml",
+          "markdown"
+        ],
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.accessibilitySupport": "off",
+        "editor.bracketPairColorization.enabled": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit",
+          "source.fixAll.eslint": "explicit",
+          "source.fixAll.sortJSON": "explicit",
+          "source.organizeImports": "explicit"
+        },
+        "editor.cursorStyle": "block",
+        "editor.cursorBlinking": "expand",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.fontFamily": "Operator Mono",
         "editor.fontLigatures": true,
-        "editor.fontSize": 12,
+        "editor.fontSize": 16,
         "editor.fontWeight": "400",
         "editor.formatOnPaste": false,
         "editor.formatOnSave": true,
@@ -63,19 +119,196 @@
         "editor.suggestSelection": "first",
         "editor.tabSize": 2,
         "editor.wordWrap": "on",
-        "terminal.integrated.defaultProfile.osx": "zsh",
-        "terminal.integrated.defaultProfile.linux": "zsh",
+        "eslint.debug": false,
+        "eslint.workingDirectories": [
+          {
+            "mode": "auto"
+          }
+        ],
+        "explorer.autoRevealExclude": {
+          "**/dist": true,
+          "**/node_modules": true
+        },
+        "extensions.ignoreRecommendations": true,
+        "files.associations": {
+          ".envrc": "dotenv"
+        },
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 5000,
+        "files.exclude": {
+          "**/.DS_Store": true,
+          "**/.git": true,
+          "**/.hg": true,
+          "**/.svn": true,
+          "**/CVS": true
+        },
+        "files.trimTrailingWhitespace": true,
+        "files.watcherExclude": {
+          "**/.git/objects/**": true,
+          "**/.git/subtree-cache/**": true,
+          "**/build/**": true,
+          "**/dist/**": true,
+          "**/node_modules/**": true,
+          "**/tmp/**": true
+        },
+        "git.autoRepositoryDetection": false,
+        "git.autofetch": true,
+        "git.branchSortOrder": "alphabetically",
+        "git.confirmSync": false,
+        "git.enableSmartCommit": true,
+        "git.inputValidationLength": 72,
+        "git.rebaseWhenSync": true,
+        "git.showActionButton": {
+          "commit": true,
+          "publish": false,
+          "sync": true
+        },
+        "html.format.enable": true,
+        "html.format.preserveNewLines": true,
+        "importCost.debug": true,
+        "importCost.largePackageDarkColor": "rgba(209, 85, 85, 0.7)",
+        "importCost.largePackageLightColor": "rgba(209, 85, 85, 0.7)",
+        "importCost.mediumPackageDarkColor": "rgba(255, 255, 0, 0.7)",
+        "importCost.mediumPackageLightColor": "rgba(255, 255, 0, 0.7)",
+        "importCost.smallPackageDarkColor": "rgba(192, 192, 192, 0.7)",
+        "importCost.smallPackageLightColor": "rgba(192, 192, 192, 0.7)",
+        "importCost.timeout": 120000,
+        "javascript.suggest.autoImports": true,
+        "javascript.updateImportsOnFileMove.enabled": "always",
+        "jest.runMode": {
+          "runAllTestsOnStartup": false,
+          "type": "on-demand"
+        },
+        "json.schemas": [],
+        "prettier.singleQuote": true,
+        "redhat.telemetry.enabled": true,
+        "scm.alwaysShowRepositories": true,
+        "scm.defaultViewMode": "tree",
+        "scm.repositories.sortOrder": "name",
+        "search.exclude": {
+          "**/.git": true,
+          "**/build": true,
+          "**/dist": true,
+          "**/node_modules": true,
+          "**/tmp": true
+        },
         "terminal.integrated.copyOnSelection": true,
+        "terminal.integrated.defaultProfile.linux": "zsh",
         "terminal.integrated.fontFamily": "MesloLGS NF",
         "terminal.integrated.fontSize": 12,
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/usr/bin/zsh"
+          }
+        },
         "terminal.integrated.scrollback": 2000,
-        "vsicons.dontShowNewVersionMessage": true,
-        "window.confirmBeforeClose": "keyboardOnly",
-        "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}"
+        "todohighlight.keywords": [
+          {
+            "backgroundColor": "green",
+            "color": "#ffffff",
+            "isWholeLine": true,
+            "overviewRulerColor": "grey",
+            "text": "IDEA:"
+          },
+          {
+            "backgroundColor": "green",
+            "color": "#ffffff",
+            "isWholeLine": true,
+            "overviewRulerColor": "grey",
+            "text": "REVIEW:"
+          },
+          {
+            "backgroundColor": "orange",
+            "color": "#ffffff",
+            "isWholeLine": true,
+            "overviewRulerColor": "grey",
+            "text": "TODO:"
+          },
+          {
+            "backgroundColor": "cyan",
+            "color": "#000000",
+            "isWholeLine": true,
+            "overviewRulerColor": "grey",
+            "text": "INFO:"
+          },
+          {
+            "backgroundColor": "red",
+            "color": "#ffffff",
+            "isWholeLine": true,
+            "overviewRulerColor": "pink",
+            "text": "FIXME:"
+          },
+          {
+            "backgroundColor": "red",
+            "color": "yellow",
+            "isWholeLine": true,
+            "overviewRulerColor": "grey",
+            "text": "XXX:"
+          }
+        ],
+        "typescript.preferences.importModuleSpecifier": "non-relative",
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+        "yaml.customTags": [
+          "!And",
+          "!And sequence",
+          "!If",
+          "!If sequence",
+          "!Not",
+          "!Not sequence",
+          "!Equals",
+          "!Equals sequence",
+          "!Or",
+          "!Or sequence",
+          "!FindInMap",
+          "!FindInMap sequence",
+          "!Base64",
+          "!Join",
+          "!Join sequence",
+          "!Cidr",
+          "!Ref",
+          "!Sub",
+          "!Sub sequence",
+          "!GetAtt",
+          "!GetAZs",
+          "!ImportValue",
+          "!ImportValue sequence",
+          "!Select",
+          "!Select sequence",
+          "!Split",
+          "!Split sequence"
+        ]
       }
     }
   },
+  "dockerComposeFile": "docker-compose.yml",
+  "features": {
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/ChristopherMacGown/devcontainer-features/direnv:1": {},
+    "ghcr.io/localstack/devcontainer-feature/localstack-cli:0": {
+      "awslocal": true
+    }
+  },
+  "forwardPorts": [
+    3000,
+    4566,
+    4571,
+    5173
+  ],
   "mounts": [
-    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
-  ]
+    "source=${localEnv:HOME}/.aws,target=/home/node/.aws,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.wakatime.cfg,target=/home/node/.wakatime.cfg,type=bind,consistency=delegated"
+  ],
+  "name": "bitio dev container base",
+  "postCreateCommand": "sh /home/node/create-resources.sh && rm /home/node/create-resources.sh",
+  "remoteUser": "node",
+  "runArgs": [
+    "--name",
+    "ai-bank-analyzer-devcontainer"
+  ],
+  "service": "devcontainer",
+  "shutdownAction": "stopContainer",
+  "waitFor": "postCreateCommand",
+  "workspaceFolder": "/workspace"
 }

@@ -1,0 +1,12 @@
+[user]
+	name = Francisco Calle Moreno
+	email = francisco.calle.moreno@gmail.com
+[core]
+	excludesfile = /home/node/.gitignore_global
+[commit]
+	template = /home/node/.stCommitMsg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

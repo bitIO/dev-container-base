@@ -1,0 +1,66 @@
+# cspell:words aaronshaf
+name: bitio-devcontainer-base
+
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    environment:
+      - AWS_ENDPOINT_URL=http://localstack:4566
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+    ports:
+      - '3000:3000'
+      - '5173:5173'
+    networks:
+      - bitio_devcontainer_base
+    command: sleep infinity
+    depends_on:
+      localstack:
+        condition: service_healthy
+
+  localstack:
+    image: localstack/localstack:latest
+    environment:
+      - DEBUG=1
+      # - SERVICES=s3,dynamodb,sns,cognito,sqs
+      - SERVICES=s3,dynamodb
+      - DATA_DIR=/tmp/localstack/data
+      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN}
+    ports:
+      - '4566:4566'
+      - '4571:4571'
+    volumes:
+      - '${LOCALSTACK_VOLUME_DIR:-./volume-localstack}:/var/lib/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:4566/_localstack/health']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - bitio_devcontainer_base
+
+  dynamodb-admin:
+    image: aaronshaf/dynamodb-admin
+    ports:
+      - '8001:8001'
+    environment:
+      - AWS_REGION=us-east-1
+      - DYNAMO_ENDPOINT=http://localstack:4566
+    networks:
+      - bitio_devcontainer_base
+    depends_on:
+      localstack:
+        condition: service_healthy
+
+networks:
+  bitio_devcontainer_base:
+    name: bitio_devcontainer_base
+
+volumes:
+  localstack-data:
