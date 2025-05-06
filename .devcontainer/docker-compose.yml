@@ -14,8 +14,8 @@ services:
       - AWS_SECRET_ACCESS_KEY=test
       - AWS_DEFAULT_REGION=us-east-1
     ports:
-      - '3000:3000'
-      - '5173:5173'
+      - '3000:3000' # regular node server
+      - '5173:5173' # vite dev server
     networks:
       - bitio_devcontainer_base
     command: sleep infinity
@@ -23,6 +23,9 @@ services:
       localstack:
         condition: service_healthy
 
+  # see https://docs.localstack.cloud/user-guide/integrations/devcontainers/
+  # for more information about using localstack in devcontainers
+  # https://app.localstack.cloud/ for the web UI (requires the auth token)
   localstack:
     image: localstack/localstack:latest
     environment:
